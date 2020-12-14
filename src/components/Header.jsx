@@ -10,16 +10,25 @@ import '../css/Header.css';
 export default function Header({
   addedAccount, onSubmit, refreshAllFunc, syncMessage,
 }) {
-  const [theme, setTheme] = useState('light');
+  let currentTheme = localStorage.getItem('theme');
+  if (currentTheme === null) currentTheme = 'light';
+  const [theme, setTheme] = useState(currentTheme);
+
+  const body = document.getElementsByTagName('body')[0];
+
+  if (theme === 'dark') {
+    body.classList.add('dark-theme');
+  }
 
   const toggleTheme = () => {
-    const body = document.getElementsByTagName('body')[0];
-    if (body.classList.contains('dark-theme')) {
+    if (theme === 'dark') {
       body.classList.remove('dark-theme');
       setTheme('light');
+      localStorage.setItem('theme', 'light');
     } else {
       body.classList.add('dark-theme');
       setTheme('dark');
+      localStorage.setItem('theme', 'dark');
     }
   };
 

@@ -5,22 +5,23 @@ import '../css/FileList.css';
 
 export default function LooseFileList(props) {
   const {
-    loadAuth, looseFileList, moveExternal, moveWithin, refreshFunc, shareFile, userId,
+    email, looseFileList, moveExternal, moveWithin, refreshFunc,
+    shareFile, userId,
   } = props;
 
   return (
-    <div className="file-list-container" style={{ display: 'flex', flexDirection: 'row' }}>
+    <div className="file-list-container">
       {looseFileList.map((file) => (
         <File
           key={file.id}
           userId={userId}
           data={file}
-          displayed
+          email={email}
           moveExternal={moveExternal}
           shareFile={shareFile}
           moveWithin={moveWithin}
-          loadAuth={loadAuth}
           refreshFunc={refreshFunc}
+          oId={-1}
         />
       ))}
     </div>
@@ -28,7 +29,7 @@ export default function LooseFileList(props) {
 }
 
 LooseFileList.propTypes = {
-  loadAuth: PropTypes.func.isRequired,
+  email: PropTypes.string.isRequired,
   looseFileList: PropTypes.arrayOf(PropTypes.object).isRequired,
   moveExternal: PropTypes.func.isRequired,
   moveWithin: PropTypes.func.isRequired,
