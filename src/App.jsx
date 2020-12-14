@@ -7,7 +7,6 @@ import Header from './components/Header';
 import Welcome from './components/Welcome';
 import Loading from './components/Loading';
 
-import { config } from './config';
 import { authorizeUserHelper, loadAuth, parseIDToken } from './logic/auth';
 
 import './App.css';
