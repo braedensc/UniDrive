@@ -127,7 +127,7 @@ deletePermission = (permId) => {
       return (
         <div>
           <ContextMenuTrigger id={id + userId.toString() + oId.toString()}>
-            <a href={webViewLink} target="blank">
+            <a href={webViewLink} target="_blank">
               <div className="file-container">
                 <div className="file-image-container">
                   <img className="file-img" src={iconLink} alt="File icon" />
@@ -139,7 +139,7 @@ deletePermission = (permId) => {
             </a>
           </ContextMenuTrigger>
           <ContextMenu className="context-menu" id={id + userId.toString() + oId.toString()}>
-            <MenuItem className="menu-item" onClick={() => window.open(webViewLink, 'blank')}>
+            <MenuItem className="menu-item" onClick={() => window.open(webViewLink, '_blank')}>
               <FontAwesomeIcon className="faOpen menu-icon" icon={faFolderOpen} />
               Open
             </MenuItem>
@@ -185,7 +185,7 @@ deletePermission = (permId) => {
           </div>
         </ContextMenuTrigger>
         <ContextMenu className="context-menu" id={id + userId.toString() + oId.toString()}>
-          <MenuItem className="menu-item" onClick={() => window.open(webViewLink, 'blank')}>
+          <MenuItem className="menu-item" onClick={() => window.open(webViewLink, '_blank')}>
             <FontAwesomeIcon className="faGoogle menu-icon" icon={faGoogleDrive} />
             View on Google Drive
           </MenuItem>
