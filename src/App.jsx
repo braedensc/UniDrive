@@ -6,14 +6,17 @@ import Layout from './components/Layout';
 import Header from './components/Header';
 import Welcome from './components/Welcome';
 import Loading from './components/Loading';
+
 import { config } from './config';
 import { authorizeUserHelper, loadAuth, parseIDToken } from './logic/auth';
+
 import './App.css';
 
 const SCOPE = 'profile email openid https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.readonly https://www.googleapis.com/auth/drive.photos.readonly https://www.googleapis.com/auth/drive.appdata https://www.googleapis.com/auth/drive.file';
 const discoveryUrl = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
 const API_KEY = config.web.api_key;
 const CLIENT_ID = config.web.client_id;
+
 let userId = 1;
 const cookies = new Cookies();
 // cookies expire in 20 years
